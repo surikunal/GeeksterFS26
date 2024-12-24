@@ -1,25 +1,35 @@
 public class MyClass {
     // Fields
+    private int a;
+    private int b;
     private int age; // not initialised
     private String name;
 
-    // Constructor
-    public MyClass(int age, String name) {
+    // Default Constructor
+    public MyClass() {
+        
+    }
+
+    // Parametrized Constructor
+    public MyClass(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public MyClass(int b, String name) {
+        this.b = b;
+        this.name = name;
+    }
+
+    public MyClass(int a, int b, int age, String name) {
+        this.a = a;
+        this.b = b;
         this.age = age;
         this.name = name;
     }
 
-    // Methods
-    public void display() {
-        System.out.prrintln( "age :" + age + ", name:" + name );
-    }
-
     // main method
     public static void main(String[] args) {
-        // Creating an object
-        MyClass obj1 = new MyClass(25, "Manish");
-
-        // calling a method
-        obj1.display();
+        MyClass obj = new MyClass(5, 6, 7, "abcd");
     }
 }
