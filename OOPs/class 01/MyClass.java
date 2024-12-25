@@ -1,35 +1,30 @@
 public class MyClass {
-    // Fields
-    private int a;
-    private int b;
-    private int age; // not initialised
-    private String name;
+    private int myInt;
+    private String myString;
 
-    // Default Constructor
-    public MyClass() {
-        
+    // copy constructor
+    public MyClass( MyClass obj ) {
+        this.myInt = obj.myInt;
+        this.myString = obj.myString;
     }
 
-    // Parametrized Constructor
-    public MyClass(int a, int b) {
-        this.a = a;
-        this.b = b;
+    // paramaterized contructor
+    public MyClass(int myInt, String myString) {
+        this.myInt = myInt;
+        this.myString = myString;
     }
 
-    public MyClass(int b, String name) {
-        this.b = b;
-        this.name = name;
+    public void displayValues() {
+        System.out.println("myInt : " + myInt);
+        System.out.println("myString : " + myString);
     }
 
-    public MyClass(int a, int b, int age, String name) {
-        this.a = a;
-        this.b = b;
-        this.age = age;
-        this.name = name;
-    }
-
-    // main method
     public static void main(String[] args) {
-        MyClass obj = new MyClass(5, 6, 7, "abcd");
+        MyClass originalObj = new MyClass(10, "Hello");
+
+        MyClass copiedObj = new MyClass(originalObj);
+
+        originalObj.displayValues();
+        copiedObj.displayValues();
     }
 }
